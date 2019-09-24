@@ -11,7 +11,8 @@ namespace OdeToFood.Web.Controllers
         {
             GreetingViewModel model = new GreetingViewModel
             {
-                Message = name ?? ConfigurationManager.AppSettings["message"]
+                Name = name ?? "Name not found",
+                Message = ConfigurationManager.AppSettings["message"]
             };
             return View(model);
         }
