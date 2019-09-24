@@ -17,6 +17,14 @@ namespace OdeToFood.Data.Services
             };
         }
 
+        public Restaurant Get(int id)
+        {
+            // first or default means return the first object that
+            // satisfies the condition or return the default.
+            // which for restaurant is null.d
+            return restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             return restaurants.OrderBy(r => r.Name);
